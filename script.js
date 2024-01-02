@@ -1,6 +1,6 @@
 (() => {
   const limites = { min: 1, max: 10 };
-  const operacoes = { "+": true, "-": true, "*": true, "/": true };
+  const operacoes = { "+": false, "-": false, "*": false, "/": true };
   const variacaoResposta = 3; // Variação para respostas alternativas
   const evitar_negativo = false; // null = sim, false = sim e zero, true = não
   let respostaCorreta = null;
@@ -19,7 +19,10 @@
   [...document.querySelectorAll(".respostas > button")].forEach(
     (respostaBtn) => {
       respostaBtn.addEventListener("click", (elemento) => {
-        if (Number(elemento.currentTarget.innerText) == respostaCorreta) {
+        if (
+          Number(elemento.currentTarget.innerText).toFixed(2) ==
+          respostaCorreta.toFixed(2)
+        ) {
           mostrarPergunta();
         } else {
           document.querySelector(".resultado > h1").innerHTML =
