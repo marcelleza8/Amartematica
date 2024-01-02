@@ -1,0 +1,11 @@
+#pergunta {
+    font-size: 24px;
+}
+
+.correta {
+    color: green;
+}
+
+.incorreta {
+    color: red;
+}
