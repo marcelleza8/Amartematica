@@ -94,7 +94,10 @@
 
     for (index in respostasBtn) {
       const respostaBtn = respostasBtn[index];
-      respostaBtn.innerHTML = respostas[index];
+      respostaBtn.innerHTML =
+        respostas[index] % 1 !== 0
+          ? respostas[index].toFixed(2)
+          : respostas[index];
     }
   }
 
