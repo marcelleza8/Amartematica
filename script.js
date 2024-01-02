@@ -1,6 +1,6 @@
 (() => {
   const limites = { min: 1, max: 10 };
-  const operacoes = { "+": false, "-": false, "*": false, "/": true };
+  const operacoes = { "+": true, "-": true, "*": true, "/": true };
   const variacaoResposta = 3; // Variação para respostas alternativas
   const evitar_negativo = false; // null = sim, false = sim e zero, true = não
   let respostaCorreta = null;
