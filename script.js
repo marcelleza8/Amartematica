@@ -5,6 +5,13 @@
   const evitar_negativo = false; // null = sim, false = sim e zero, true = não
   let respostaCorreta = null;
 
+  const app = new Reactive({
+    data: {
+      total: 0,
+      acertos: 0,
+    },
+  });
+
   function gerarNumeroAleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
@@ -24,6 +31,7 @@
           respostaCorreta.toFixed(2)
         ) {
           mostrarPergunta();
+          app.data.acertos += 1;
         } else {
           document.querySelector(".resultado > h1").innerHTML =
             "Tente novamente";
@@ -102,6 +110,8 @@
           ? respostas[index].toFixed(2)
           : respostas[index];
     }
+
+    app.data.total += 1;
   }
 
   function gerarRespostasErradas(respostaCorreta, numeroDeErros, variacao) {
